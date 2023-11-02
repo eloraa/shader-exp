@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+    background-color: #000;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    margin-top: 5rem;
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f2f2f2;
+    border-radius: 99999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #000;
+}
+input,
+select,
+textarea,
+option,
+input:active,
+input:focus,
+textarea:active,
+textarea:focus,
+select:active,
+select:focus,
+::placeholder {
+    @apply font-sans;
+    @apply rounded-none;
+    @apply bg-transparent;
+    @apply text-inherit;
+    @apply border-none;
+    @apply outline-none;
+}
+
+img,
+svg {
+    @apply w-full h-full object-cover;
+}
