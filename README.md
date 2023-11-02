@@ -1,5 +1,8 @@
-# shader-01
+# shader-exp
 I've always been a fan of shaders. I'm still in the learning stage. Here I'll upload all the shaders that I practiced or created.
+
+## Live Link
+[https://eloraa.github.io/shader-exp/](https://eloraa.github.io/shader-exp/)
 
 ## Getting Started
 To get you started you can simply clone the repository:
