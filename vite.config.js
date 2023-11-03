@@ -6,7 +6,7 @@ export default defineConfig({
       input: {
         main: './index.html',
         about: './about.html',
-        'favicon.ico': '../favicon.ico',
+        'favicon.ico': './favicon.ico',
         '404': './404.html',
         '01': './shaders/01/index.html',
         '02': './shaders/02/index.html',
