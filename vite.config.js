@@ -9,6 +9,8 @@ export default defineConfig({
         '404': './404.html',
         '01': './shaders/01/index.html',
         '02': './shaders/02/index.html',
+        '03': './shaders/03/index.html',
+        '04': './shaders/04/index.html',
       }
     }
   },

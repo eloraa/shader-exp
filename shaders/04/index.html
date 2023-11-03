@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/media/vector/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sine - Cosine | Elora</title>
+
+    <link href="../../src/css/fonts/Alpha Lyrae/index.css" rel="stylesheet" />
+  </head>
+
+  <body class="h-full flex flex-col justify-between overflow-x-hidden">
+    <header class="px-5 md:px-12 py-5 items-center flex justify-between">
+      <a href="/">
+        <h1 class="font-semibold text-sm">Sine - Cosine</h1>
+      </a>
+      <a href="/about.html" class="text-sm">About</a>
+    </header>
+    <div id="app" class="h-full w-full overflow-hidden">
+    </div>
+    <footer class="px-5 md:px-12 py-4 text-sm flex items-center justify-between">
+      <p>Practicing animation.</p>
+      <a href="https://github.com/eloraa" rel="norefferer" target="_blank" class="group inline-block">
+        <div class="w-10">
+          <svg class="w-full h-full" viewBox="0 0 39 28">
+            <foreignObject x="5" y="0" width="28" height="28">
+              <div class="w-full h-full">
+                <div
+                  class="dark:[filter:invert(1)_grayscale(1)_brightness(2)] scale-110 w-full h-full bg-[url('/media/images/sprites/heart.png')] bg-no-repeat bg-[length:2900%] bg-left group-hover:bg-right transition-none group-hover:[transition:background-position_800ms_steps(28)]"
+                ></div>
+              </div>
+            </foreignObject>
+
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M11 6H10V6.82198C9.94652 6.86805 9.90631 6.92739 9.87938 7H9V8V9V10V11V12V13V14V15V16V17V18H9.83853C9.84168 18.1913 9.89551 18.332 10 18.422V19H11H12V18V17V16V15V14V13V12V11V10V9V8V7H11.3174C11.2639 6.85582 11.1581 6.76396 11 6.72443V6ZM7 17.5418C6.85689 17.7136 6.69857 17.8664 6.52502 18H7V19H6H5H4H3H2L2 18.1487C1.92587 18.1021 1.85376 18.0525 1.78369 18H1L1 17.1503C0.968978 17.1013 0.93899 17.0512 0.910035 17H0V16V15V14V13V12V11H1V11.3092C1.06857 11.201 1.1422 11.0979 1.22088 11H1V10H2H2.58925C2.7211 9.94941 2.85802 9.90627 3 9.87056V9H4H5H6V10H5.62598C5.75549 10.0498 5.88016 10.1067 6 10.1709V10H7V11H6.99669L7 11.0041V11H8V12V13V14V15H7H6H5H4H3H2V15.8577C2.01664 15.9062 2.03445 15.9536 2.05342 16H3V17H2.87181C2.91361 17.0268 2.95634 17.052 3 17.0756V17H4H5V17.1973C5.1408 17.1455 5.27462 17.0797 5.40149 17H5V16H6H7H8V17V18H7V17.5418ZM28 9V10H28.8972C28.931 9.98713 28.9653 9.97474 29 9.9628V9H30H31V10V11V12H30H29H28.265C28.1632 12.1252 28.0749 12.2634 28 12.4145V13V14V15V16V17V18V19H27H26V18V17V16V15V14V13V12V11V10V9H27H28ZM37 19H36H35H34H33H32V18V17.381C31.9383 17.262 31.8853 17.135 31.8411 17H31V16V15V14H32V14.263C32.048 14.1705 32.1013 14.0828 32.1599 14H32V13H33H33.9644L34 12.9946V12H33H32V11V10H33V10.0668C33.0599 10.0433 33.1204 10.021 33.1815 10H33V9H34H35H36V9.8686C36.1527 9.90469 36.2982 9.94849 36.4364 10H37H38V11H37.7771C37.8646 11.1286 37.9389 11.2592 38 11.3918V11H39V12V13V14V15V16V17V18V19H38H37ZM35 12V12.9528C35.105 12.9623 35.21 12.978 35.3149 13H36V12H35Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+      </a>
+      <select hidden name="theme" id="theme">
+        <option value="system">System</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+    </footer>
+
+    <script type="module" src="../../src/js/index.js"></script>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
