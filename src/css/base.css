@@ -3,28 +3,33 @@
 @tailwind utilities;
 
 ::selection {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 ::-webkit-scrollbar {
-    margin-top: 5rem;
-    width: 5px;
+  margin-top: 5rem;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #f2f2f2;
-    border-radius: 99999px;
-
+  background: #bbb;
+  border-radius: 99999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #000;
+  background: #000;
 }
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+
 input,
 select,
 textarea,
@@ -36,15 +41,15 @@ textarea:focus,
 select:active,
 select:focus,
 ::placeholder {
-    @apply font-sans;
-    @apply rounded-none;
-    @apply bg-transparent;
-    @apply text-inherit;
-    @apply border-none;
-    @apply outline-none;
+  @apply font-sans;
+  @apply rounded-none;
+  @apply bg-transparent;
+  @apply text-inherit;
+  @apply border-none;
+  @apply outline-none;
 }
 
 img,
 svg {
-    @apply w-full h-full object-cover;
+  @apply w-full h-full object-cover;
 }

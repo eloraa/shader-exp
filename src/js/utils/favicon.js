@@ -1,18 +1,15 @@
-
 export const animateFavicon = () => {
   const fileLink = document.querySelector('link[rel="icon"]').href;
 
   const canvas = document.createElement('canvas');
-  const context = canvas.getContext('2d', { willReadFrequently: true }); 
-
+  const context = canvas.getContext('2d', { willReadFrequently: true });
 
   const video = document.createElement('video');
 
   video.src = fileLink;
-  video.crossOrigin = 'anonymous'; 
+  video.crossOrigin = 'anonymous';
   video.style.display = 'none';
   document.body.appendChild(video);
-
 
   let animationStarted = false;
 
@@ -23,7 +20,7 @@ export const animateFavicon = () => {
     return r > redThreshold && g > greenThreshold && b < blueThreshold;
   }
 
-  function draw() {
+  function drawVideo() {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
@@ -43,9 +40,12 @@ export const animateFavicon = () => {
 
     if (video.currentTime >= video.duration) {
       video.currentTime = 0;
-      video.play()
+      video.play();
     }
+  }
 
+  function draw() {
+    drawVideo()
     const dataURL = canvas.toDataURL('image/png');
 
     const favicon = document.querySelector('link[rel="icon"]');
