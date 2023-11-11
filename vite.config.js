@@ -14,6 +14,7 @@ export default defineConfig({
         '04': './shaders/04/index.html',
         '05': './shaders/05/index.html',
         '06': './shaders/06/index.html',
+        '06': './shaders/07/index.html',
       }
     }
   },
