@@ -3,7 +3,7 @@ import AsyncLoader from '../../../src/js/components/classes/AsyncLoader';
 import { record } from '../../../src/js/utils/recorder';
 
 let container;
-let camera, scene, renderer, clock, material;
+let camera, scene, renderer, clock, texture1, texture2, activeTexture = 0;
 let uniforms, vertexShader, fragmentShader, t;
 
 function init() {
@@ -31,16 +31,15 @@ function init() {
     u_resolution: { type: 'v2', value: new THREE.Vector2() },
     u_mouse: { type: 'v2', value: new THREE.Vector2() },
     u_texture: { type: 't', value: null },
-    u_tex_ratio: { type: 't', value: new THREE.Vector2() }
+    u_tex_ratio: { type: 't', value: new THREE.Vector2() },
   };
 
   loader.load(
     '../../07/assets/texture/01.jpg',
 
     function (texture) {
-      uniforms.u_texture.value = texture;
-      uniforms.u_tex_ratio.value.x = texture.image.width;
-      uniforms.u_tex_ratio.value.y = texture.image.height;
+      texture1 = texture
+      setTexture(texture1)
     },
 
     undefined,
@@ -49,6 +48,38 @@ function init() {
       console.error(err);
     }
   );
+
+  loader.load(
+    '../../07/assets/texture/02.jpg',
+
+    function (texture) {
+      texture2 = texture
+
+      container.addEventListener('click', () => {
+        if(activeTexture) {
+          activeTexture = 0;
+          setTexture(texture1)
+        }
+        else {
+          activeTexture = 1;
+          setTexture(texture2)
+        }
+      })
+    },
+
+    undefined,
+
+    function (err) {
+      console.error(err);
+    }
+  );
+  
+
+  function setTexture(texture) {
+    uniforms.u_texture.value = texture;
+    uniforms.u_tex_ratio.value.x = texture.image.width;
+    uniforms.u_tex_ratio.value.y = texture.image.height;
+  }
 
   const material = new THREE.ShaderMaterial({
     uniforms: uniforms,
