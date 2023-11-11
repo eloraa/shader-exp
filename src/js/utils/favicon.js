@@ -13,6 +13,7 @@ export const animateFavicon = () => {
   video.style.display = 'none';
   document.body.appendChild(video);
 
+
   let animationStarted = false;
 
   function isYellowish(r, g, b) {
@@ -42,6 +43,7 @@ export const animateFavicon = () => {
 
     if (video.currentTime >= video.duration) {
       video.currentTime = 0;
+      video.play()
     }
 
     const dataURL = canvas.toDataURL('image/png');
