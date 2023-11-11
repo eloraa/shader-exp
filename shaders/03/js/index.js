@@ -63,10 +63,10 @@ function render() {
 const manager = new AsyncLoader.manager();
 const loader = new AsyncLoader.loader(manager);
 
-loader.load('/shaders/03/vertexShader.vert', function (text) {
+loader.load('../../03/assets/shaders/vertexShader.vert', function (text) {
   vertexShader = text;
 });
-loader.load('/shaders/03/fragmentShader.frag', function (text) {
+loader.load('../../03/assets/shaders/fragmentShader.frag', function (text) {
   fragmentShader = text;
 });
 // manager.onProgress = function ( item, loaded, total ) {

@@ -16,6 +16,6 @@
   },
   "author": "elora",
   "dependencies": {
-    "three": "^0.158.0"
+    "three": "0.111.0"
   }
 }

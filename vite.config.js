@@ -12,8 +12,9 @@ export default defineConfig({
         '02': './shaders/02/index.html',
         '03': './shaders/03/index.html',
         '04': './shaders/04/index.html',
+        '05': './shaders/05/index.html',
       }
     }
   },
-  publicDir: './assets'
+  publicDir: './shaders'
 })
