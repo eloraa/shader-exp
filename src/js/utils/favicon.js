@@ -45,7 +45,7 @@ export const animateFavicon = () => {
   }
 
   function draw() {
-    drawVideo()
+    drawVideo();
     const dataURL = canvas.toDataURL('image/png');
 
     const favicon = document.querySelector('link[rel="icon"]');
@@ -56,21 +56,24 @@ export const animateFavicon = () => {
     requestAnimationFrame(draw);
   }
 
-  document.addEventListener(
-    'click',
-    function () {
-      if (!animationStarted) {
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
+  function init() {
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        video
+          .play()
+          .then(() => draw())
+          .catch(err => reject(err));
+      }, 500);
+    });
+  }
 
-        video.play();
-        draw();
-
-        animationStarted = true;
-      }
-    },
-    { once: true }
-  );
+  video.addEventListener('canplaythrough', () => {
+    init().catch(() => {
+      document.addEventListener('click', init);
+    });
+  });
 
   video.load();
 };
